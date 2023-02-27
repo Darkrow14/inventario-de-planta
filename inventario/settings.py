@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'inventario.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': env("DB_NAME") ,
-        'USER': env("DB_USER") ,
-        'PASSWORD': env("DB_PASSWORD") ,
-        'HOST': env("DB_HOST") ,    
-        'PORT': env("DB_PORT") ,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'inventario.db',
+        'USER': 'danny',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
