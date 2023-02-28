@@ -25,5 +25,5 @@ class Empleado(models.Model):
     idEmpresa= models.ForeignKey(Empresa, null=False, blank=False,default=5,on_delete=models.CASCADE)
 
 class articulo_has_empleado(models.Model):
-    documento= models.PositiveSmallIntegerField(Empleado, null=False, blank=False, default=5,on_delete=models.CASCADE)
-    idArticulo= models.PositiveSmallIntegerField(Articulo, null=False, blank=False, default=5,on_delete=models.CASCADE)
+    documento= models.PositiveSmallIntegerField(Empleado, null=False, blank=False, default=5)
+    idArticulo= models.PositiveSmallIntegerField(Articulo, null=False, blank=False, default=5)
