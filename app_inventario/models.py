@@ -46,3 +46,10 @@ class articulo_has_empleado(models.Model):
 
     def __str__(self) -> str:
         return f"{self.documento.nomEmpleado}: Articulo {self.idArticulo.nomArticulo}."
+    
+    def dashboard(self):
+        dataset = {}
+        dataset['registros'] = self.objects.all()
+        dataset['total_assigned'] = len(dataset['registros']);
+        total_articles = sum(list(Articulo.objects.all()),'cantidad',0);
+        return dataset

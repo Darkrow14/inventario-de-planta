@@ -1,0 +1,66 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'app_inventario/css/bootstrap.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'app_inventario/css/main.css' %}">
+
+<html>
+   <body>
+    <div class="panel">
+        <div class="panel-tab">
+            <h4>
+                Cantidad de empleados
+            </h4>
+            <div class="total--value">
+                {{total_empleados}}
+            </div>
+        </div>
+        <div class="panel-tab">
+            <h4>
+                Articulos asignados
+            </h4>
+            <div class="total--value">
+               {{total_assigned}}
+            </div>
+        </div>
+
+        <div class="panel-tab">
+            <h4>
+                En inventario
+            </h4>
+            <div class="total--value">
+                {{total_free}}
+            </div>
+        </div>
+
+    </div>
+    <h2>
+        Listado de asignación
+    </h2>
+    <div class="content">
+        <div class="table-responsive">
+            <table class="table table-dark table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Documento</th>
+                        <th scope="col">Empleado</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Articulo</th>
+                </thead>
+                <tbody>
+                {% for data in registros %}
+                <tr>
+                    <td>{{data.documento.documento}}</td>
+                    <td>{{data.documento.nomEmpleado}}</td>
+                    <td>{{data.documento.telefono}}</td>
+                    <td>{{data.documento.e_mail}}</td>
+                    <td>{{data.idArticulo.nomArticulo}}</td>
+                    
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    
+    </div>
+   </body> 
+</html>
